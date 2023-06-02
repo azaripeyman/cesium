@@ -6,7 +6,7 @@ const baseUrl = "http://127.0.0.1:3000";
 let reporter = "line";
 if (!process.env.CI) {
   reporter = [
-    ["html", { open: "never", outputFolder: "../Build/Specs/e2e/report" }],
+    ["html", { open: "never", outputFolder: "../../Build/Specs/e2e/report" }],
     ["list"],
   ];
 }
@@ -15,8 +15,8 @@ if (!process.env.CI) {
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./",
-  outputDir: "../Build/Specs/e2e/artifacts",
+  testDir: ".",
+  outputDir: "../../Build/Specs/e2e/artifacts",
   fullyParallel: false, // async scripts will block each other and lead to timeouts
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
