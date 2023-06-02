@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <title>Cesium</title>
+  </head>
+  <body>
+    <style>
+      @import url(../../Apps/Sandcastle/templates/bucket.css);
+    </style>
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="toolbar"></div>
+    <script type="module">
+      window.CESIUM_BASE_URL = "../../Build/CesiumUnminified/";
+      import * as Cesium from "../../Build/CesiumUnminified/index.js";
+      window.Cesium = Cesium;
+    </script>
+  </body>
+</html>
