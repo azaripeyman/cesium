@@ -21,6 +21,7 @@ jobs:
         - ./travis/coverage.sh
     - name: "Release Tests"
       node_js: "18"
+      before_install: npx playwright install-deps
       script: 
         - ./travis/test-release.sh
         - ./travis/verify.sh
