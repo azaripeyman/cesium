@@ -1,7 +1,7 @@
 /* global process */
 import { defineConfig, devices } from "@playwright/test";
 
-const baseUrl = "http://127.0.0.1:3000";
+const baseUrl = "http://localhost:3000";
 
 let reporter = "line";
 if (!process.env.CI) {
@@ -43,8 +43,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "npm run start -- --port 3000",
+    command: "npm run start -- --production --port 3000",
     url: baseUrl,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
   },
 });
