@@ -29,7 +29,8 @@ jobs:
       node_js: "18"
       before_script: npx playwright install-deps
       script: 
-        - ./travis/test-e2e.sh
+        - npm --silent run build-release
+        - npm --silent run test-e2e
     - name: "Linting, Deployment"
       node_js: "18"
       script:
