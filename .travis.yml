@@ -27,7 +27,7 @@ jobs:
         - npm --silent run cloc
     - name: "End to End Tests"
       node_js: "18"
-      before_script: npx playwright install-deps
+      before_script: sudo npx playwright install-deps
       script: 
         - npm --silent run build-release
         - npm --silent run test-e2e
